@@ -1,21 +1,3 @@
-/*
- * 
- *  Constants contains Arabic punctuation, 
- *    and diacritic marks which are used by some tools by default
- * 
- *  Note: the set of punctuation marks mentioned here 
- *        are the ones usually used in MSA. They might be fewer 
- *        than the ones used in the Quranic Text. However, more 
- *        punctuation marks can be added easily
- *        
- *  For bug reports, and fixes contact:
- *    Maha Althobaiti
- *    mjaltha@essex.ac.uk
- *  
- */
-
-
-
 import java.util.ArrayList;
 
 public class Constants {
