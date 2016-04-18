@@ -1,10 +1,10 @@
 # Personality Detection Using Social Media Data
 
 Team:
-Saurabh Mishra (9541758252) - saurabhm@usc.edu
-Anurag Shukla (6554545108) - anuragsh@usc.edu
-Anirudh Mukund Deshpande (2746365653) - deshpana@usc.edu
-Tejesh Shivanna (7690654807) - shivanna@usc.edu
+  Saurabh Mishra (9541758252) - saurabhm@usc.edu
+  Anurag Shukla (6554545108) - anuragsh@usc.edu
+  Anirudh Mukund Deshpande (2746365653) - deshpana@usc.edu
+  Tejesh Shivanna (7690654807) - shivanna@usc.edu
 
 INTRODUCTION
 In this project we are planning to deduce an individual’s personality by analyzing their social media data. Myers-Briggs Type Indicator is a very popular approach to identify psychological preferences of people. This method is based on introspective questionnaire and therefore can’t predict any user’s personality type without user’s direct involvement in the process. 
