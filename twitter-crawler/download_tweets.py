@@ -39,16 +39,15 @@ def get_tweets(handle, max_id):
         r = session.get('https://api.twitter.com/1.1/statuses/home_timeline.json',
                                               params=params, verify=True)
         res = r.json()
-        print res
-        if 'errors' in res:
-            global current_session
+	if 'errors' in res:
+	    global current_session
             current_session += 1
             if current_session > 3:
                  current_session = 0
                  print "Going to sleep ", time.time()
                  time.sleep(10*60)
             session = sessions[current_session]
-        else:
+	else:
             worked = True
 
     tweets = []
@@ -56,13 +55,6 @@ def get_tweets(handle, max_id):
     for r in res:
         tweets.append(r['text'])
         max_id = r['id']
-    return tweets, max_id
-
-    tweets = []
-    max_id = -1
-    for r in res:
-        tweets.append(r['text'])
-    max_id = r['id']
     return tweets, max_id
 
   
@@ -87,14 +79,13 @@ for user in users:
         continue
 
     tag = users[user]
-    out = open(tag+'.txt', 'ab')
+    out = open('out.txt', 'ab')
     print "handle: ", user
 
     tweets, max_id = get_tweets(user, None)
     while max_id != -1:
         for t in tweets:
-            print t
-            out.write(t+'\n')
+            out.write(tag+'#!#!#!'+user+'#!#!#!'+t+'\n')
         tweets, max_id = get_tweets(user, max_id)
 
     done['users'].append(user)
