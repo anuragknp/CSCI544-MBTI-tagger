@@ -27,7 +27,7 @@ for i in range(1,17):
     for line in test_file:
         tokens = line.strip().split('=')
         tweet, count = tokens[0], int(tokens[1])
-        train_features[tweet] = count
+        test_features[tweet] = count
 
     train_set.append((train_features, perso_type[3]))
     test_set.append((test_features, perso_type[3]))
