@@ -7,10 +7,10 @@ library(LDAvis)
 library(servr)
 
 # read data
-train = read.csv("tweets_8k.csv", header=TRUE);
+train = read.csv("tweets_16way_final.csv", header=TRUE);
 txt = train[,c(2)]
 labels = train[,1]
-
+ 
 # tokenize on space and output as a list:
 txt <- as.character(txt)
 doc.list <- strsplit(txt, " ")
@@ -40,7 +40,7 @@ term.frequency <- as.integer(term.table)
 
 # MCMC and model tuning parameters:
 K <- 16
-G <- 20
+G <- 50
 alpha <- 0.02
 eta <- 0.02
 
@@ -81,24 +81,24 @@ results <- list(phi = phi,
                 vocab = vocab,
                 term.frequency = term.frequency)
 
-top.topic.words(fit$topics, 7, by.score=TRUE)
+top.topic.words(fit$topics, 30, by.score=TRUE)
 
-test = read.csv("tweets_test.csv", header=TRUE);
-txt = test[,c(1)]
+test = read.csv("tweets_16way_test_final.csv", header=TRUE);
+test_txt = test[,c(2)]
 
 # tokenize on space and output as a list:
-txt <- as.character(txt)
-doc.list <- strsplit(txt, " ")
+test_txt <- as.character(test_txt)
+test_doc.list <- strsplit(test_txt, " ")
 
 # compute the table of terms:
-term.table <- table(unlist(doc.list))
-term.table <- sort(term.table, decreasing = TRUE)
+test_term.table <- table(unlist(test_doc.list))
+test_term.table <- sort(test_term.table, decreasing = TRUE)
 
-vocab <- names(term.table)
+test_vocab <- names(test_term.table)
 
 # now put the documents into the format required by the lda package:
-get.terms <- function(x) {
-  index <- match(x, vocab)
+test_get.terms <- function(x) {
+  index <- match(x, test_vocab)
   index <- index[!is.na(index)]
   rbind(as.integer(index - 1), as.integer(rep(1, length(index))))
 }
