@@ -28,15 +28,42 @@ print len(user)
 with open('unique_users.txt', 'w') as out:
     out.write(json.dumps(user))
 
+def get_tag_count(tt, tag):
+    if tag not in tt:
+        return 0
+    return tt[tag]
+
 for u in user.keys():
     tag = {}
     for t in user[u]:
-        if t not in tag:
-            tag[t] = 1
-        else:
-            tag[t] += 1
-    best_tag = max(tag, key=lambda i:  tag[i])
-    user[u] = best_tag
+        t = list(t.lower())
+        for tt in t:
+            if tt not in tag:
+                tag[tt] = 1
+            else:
+                tag[tt] += 1
+    ans = ''
+    if get_tag_count(tag, 'i') < get_tag_count(tag, 'e'):
+        ans += 'I'
+    else:
+        ans += 'E'
 
-with open('unique_users_best_tag.txt', 'w') as out:
+    if get_tag_count(tag, 'n') < get_tag_count(tag, 's'):
+        ans += 'N'
+    else:
+        ans += 'S'
+
+    if get_tag_count(tag, 't') < get_tag_count(tag, 'f'):
+        ans += 'T'
+    else:
+        ans += 'F'
+    
+    if get_tag_count(tag, 'j') < get_tag_count(tag, 'p'):
+        ans += 'J'
+    else:
+        ans += 'P'
+
+    user[u] = ans
+
+with open('unique_users_best_tag2.txt', 'w') as out:
     out.write(json.dumps(user))
