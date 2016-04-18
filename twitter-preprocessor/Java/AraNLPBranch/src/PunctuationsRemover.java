@@ -1,19 +1,3 @@
-
-
-/*
- *  PunctuationsRemover 
- *      removes excessive whitespace sequences in the Arabic text,then
- *      removes all punctuation marks that usually appear in MSA 
- *      
- *      
- *  For bug reports, and fixes contact:
- *    Maha Althobaiti
- *    mjaltha@essex.ac.uk
- *  
- */
-
-
-
 import java.util.ArrayList;
 
 public class PunctuationsRemover {

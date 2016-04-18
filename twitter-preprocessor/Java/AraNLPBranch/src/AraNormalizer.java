@@ -1,22 +1,3 @@
-
-
-/*
- * Arabic Normalizer can do the follwoing:
- * 
- *     -Normalization of hamzated alif to a bare alif.
- *     -Normalization of taa marbutah to haa
- *     -Normalization of dotless yaa to yaa.
- *     -Removal of tatweel (stretching character). 
- *     
- *        
- *  For bug reports, contact:
- *    Maha Althobaiti
- *    mjaltha@essex.ac.uk
- *  
- */
-
-
-
 import java.util.ArrayList;
 
 public class AraNormalizer {

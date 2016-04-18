@@ -1,19 +1,3 @@
-/*
- *  TrainedTokenizer is used to segment Arabic text into tokens. It
- *  is built based on Maximum entropy model, trained on documents from 
- *  different genres collected from Arabic Wikipedia collection.
- *  
- *  OpenNLP software, developed at The Apache Software Foundation 
- *  (http://http://www.apache.org/), was used in order to train and use the model. 
- *        
- *  For bug reports, and fixes contact:
- *    Maha Althobaiti
- *    mjaltha@essex.ac.uk
- *  
- */
-
-
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;

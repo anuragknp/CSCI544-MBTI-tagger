@@ -1,21 +1,3 @@
-
-
-/*
- *  DiacriticRemover 
- *      removes excessive whitespace sequences in the Arabic text,then
- *      removes all diacritic marks that usually appear in MSA
- *      1- TANWEEN_ALFATHA, 2- TANWEEN_ALDAMMA, 3- TANWEEN_ALKASRA, 
- *      4- FATHA, 5- DAMMA, 6- KASRA,
- *      7- SHADDA 8- SUKUN. 
- *      
- *      
- *  For bug reports, and fixes contact:
- *    Maha Althobaiti
- *    mjaltha@essex.ac.uk
- *  
- */
-
-
 import java.util.ArrayList;
 
 public class DiacriticsRemover {
